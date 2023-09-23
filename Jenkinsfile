@@ -1,21 +1,38 @@
 pipeline {
-    agent any
+    agent any // You can specify a specific agent label here if needed
 
     stages {
-        stage('Check Yarn Version') {
+        stage('Checkout') {
             steps {
-                sh 'yarn --version'
+                // This step checks out your source code repository
+                checkout scm
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Yarn Version') {
             steps {
-                // Checkout your source code from a Git repository if needed
-                // git branch: 'your-branch', url: 'your-git-repo-url'
-
-                // Run 'yarn install'
-                sh 'yarn install'
+                // This step runs a Windows batch command to execute 'yarn install'
+                bat 'yarn --version'
             }
+        }
+
+        stage('Yarn Install') {
+            steps {
+                // This step runs a Windows batch command to execute 'yarn install'
+                bat 'yarn install'
+            }
+        }
+    }
+
+    post {
+        success {
+            // This block will be executed if the pipeline succeeds
+            echo 'Yarn install succeeded'
+        }
+
+        failure {
+            // This block will be executed if the pipeline fails
+            echo 'Yarn install failed'
         }
     }
 }
