@@ -12,7 +12,7 @@ pipeline {
         stage('Installing yarn') {
             steps {
                 // Specify the full path to your locally installed Yarn executable
-                bat script: 'C:\Users\Sakoon Say\AppData\Roaming\npm\yarn.cmd'
+                bat script: 'C:\\Users\\Sakoon Say\\AppData\\Roaming\\npm\\yarn.cmd'
             }
         }
 
