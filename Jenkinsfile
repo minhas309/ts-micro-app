@@ -13,7 +13,6 @@ pipeline {
             steps {
                 // This step runs a Windows batch command to execute 'yarn version'
                 bat "npm install -g yarn"
-                bat 'yarn --version'
             }
         }
 
