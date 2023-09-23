@@ -8,11 +8,11 @@ pipeline {
                 checkout scm
             }
         }
-        
+
         stage('Yarn Install') {
             steps {
                 // This step runs a Windows batch command to execute 'yarn install'
-                bat 'yarn install'
+                yarn 'install'
             }
         }
     }
