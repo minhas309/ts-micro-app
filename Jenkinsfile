@@ -9,6 +9,13 @@ pipeline {
             }
         }
 
+        stage('Yarn Version') {
+            steps {
+                // This step runs a Windows batch command to execute 'yarn install'
+                bat 'yarn --version'
+            }
+        }
+
         stage('Yarn Install') {
             steps {
                 // This step runs a Windows batch command to execute 'yarn install'
