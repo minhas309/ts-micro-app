@@ -11,7 +11,8 @@ pipeline {
 
         stage('Yarn Version') {
             steps {
-                // This step runs a Windows batch command to execute 'yarn install'
+                // This step runs a Windows batch command to execute 'yarn version'
+                sh "npm install -g yarn"
                 bat 'yarn --version'
             }
         }
