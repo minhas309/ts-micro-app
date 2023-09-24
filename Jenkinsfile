@@ -1,6 +1,5 @@
 pipeline {
     agent any // You can specify a specific agent label here if needed
-
     stages {
         stage('Checkout') {
             steps {
